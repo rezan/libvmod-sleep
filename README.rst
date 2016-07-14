@@ -33,8 +33,7 @@ Prototype
 Return value
 	VOID
 Description
-	Sleeps for specified amount of time (t). Supported types are ms (milliseconds),
-s (seconds), m (minutes), h (hours), d (days), w (weeks) and y (years).
+	Sleeps for specified amount of time (t). Supported types are ms (milliseconds), s (seconds), m (minutes), h (hours), d (days), w (weeks) and y (years). NOTE, please be aware of the various timeouts which may trigger if you sleep too long.
 Example
         ::
 
