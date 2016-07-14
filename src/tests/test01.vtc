@@ -1,0 +1,26 @@
+varnishtest "Test sleep vmod"
+
+server s1 {
+       rxreq
+       txresp
+} -start
+
+varnish v1 -vcl+backend {
+	import sleep from "${vmod_topbuild}/src/.libs/libvmod_sleep.so";
+
+	sub vcl_deliver {
+		sleep.sleep(2.1s);
+	}
+} -start
+
+logexpect l1 -v v1 -g request {
+	expect 0 1001   Begin           req
+	expect * =      Timestamp       {Resp: \S+ 2\.\d+ 0\.\d+}
+} -start
+
+client c1 {
+	txreq -url "/"
+	rxresp
+} -run
+
+logexpect l1 -wait
