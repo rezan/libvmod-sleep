@@ -1,8 +1,6 @@
 #include <time.h>
 #include <errno.h>
 
-#include "vcl.h"
-#include "vrt.h"
 #include "cache/cache.h"
 
 #include "vcc_if.h"
