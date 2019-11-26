@@ -3,7 +3,7 @@
 
 #include "cache/cache.h"
 
-#include "vcc_if.h"
+#include "vcc_sleep_if.h"
 
 #define VMOD_SLEEP_NS	(1000 * 1000 * 1000)
 

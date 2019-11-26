@@ -6,7 +6,7 @@ server s1 {
 } -start
 
 varnish v1 -vcl+backend {
-	import sleep from "${vmod_topbuild}/src/.libs/libvmod_sleep.so";
+	import ${vmod_sleep};
 
 	sub vcl_deliver {
 		sleep.sleep(2.1s);

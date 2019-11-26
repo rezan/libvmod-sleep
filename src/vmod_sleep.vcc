@@ -1,2 +1,7 @@
-$Module sleep 3 Example VMOD
+$Module sleep 3 Sleep VMOD
+
+"Sleep VMOD"
+
 $Function VOID sleep(DURATION)
+
+Do a sleep
